@@ -545,9 +545,10 @@ const SearchBar = () => {
                                 <SearchResult
                                   key={entry.uniqueId}
                                   entry={entry}
-                                  handleClick={(lineEntry: Song) =>
-                                    history.push(`/library/artist/${lineEntry.id}`)
-                                  }
+                                  handleClick={(lineEntry: Song) => {
+                                    history.push(`/library/artist/${lineEntry.id}`);
+                                    closeSearch();
+                                  }}
                                   handlePlay={handlePlayQueueAdd}
                                   title={<>{entry.title}</>}
                                   details={
@@ -596,9 +597,10 @@ const SearchBar = () => {
                                 <SearchResult
                                   key={entry.uniqueId}
                                   entry={entry}
-                                  handleClick={(lineEntry: Song) =>
-                                    history.push(`/library/album/${lineEntry.id}`)
-                                  }
+                                  handleClick={(lineEntry: Song) => {
+                                    history.push(`/library/album/${lineEntry.id}`);
+                                    closeSearch();
+                                  }}
                                   handlePlay={handlePlayQueueAdd}
                                   title={<>{entry.title}</>}
                                   details={
@@ -655,9 +657,10 @@ const SearchBar = () => {
                                 <SearchResult
                                   key={entry.uniqueId}
                                   entry={entry}
-                                  handleClick={(lineEntry: Song) =>
-                                    history.push(`/library/album/${lineEntry.albumId}`)
-                                  }
+                                  handleClick={(lineEntry: Song) => {
+                                    history.push(`/library/album/${lineEntry.albumId}`);
+                                    closeSearch();
+                                  }}
                                   handlePlay={handlePlayQueueAdd}
                                   title={<>{entry.title}</>}
                                   details={
