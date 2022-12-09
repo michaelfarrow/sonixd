@@ -37,12 +37,12 @@ const Titlebar = ({ font }: any) => {
     const currentEntryList = getCurrentEntryList(playQueue);
 
     const playStatus =
-      player.status !== 'PLAYING' && playQueue[currentEntryList].length > 0 ? t('(Paused)') : '';
+      player.status === 'PLAYING' ? '⏵' : playQueue[currentEntryList].length > 0 ? '⏸' : '';
 
     const songTitle = playQueue[currentEntryList][playQueue.currentIndex]?.title
-      ? `(${playQueue.currentIndex + 1} / ${playQueue[currentEntryList].length}) ~ ${
-          playQueue[currentEntryList][playQueue.currentIndex]?.title
-        } ~ ${playQueue[currentEntryList][playQueue.currentIndex]?.artist[0]?.title} `
+      ? `${playQueue[currentEntryList][playQueue.currentIndex]?.title} - ${
+          playQueue[currentEntryList][playQueue.currentIndex]?.artist[0]?.title
+        } `
       : 'Sonixd';
 
     setTitle(`${playStatus} ${songTitle}`.trim());
