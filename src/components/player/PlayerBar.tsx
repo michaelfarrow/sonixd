@@ -439,7 +439,7 @@ const PlayerBar = () => {
                 />
               </CustomTooltip>
               {/* Seek Backward Button */}
-              <CustomTooltip text={t('Seek backward')}>
+              {/* <CustomTooltip text={t('Seek backward')}>
                 <PlayerControlIcon
                   aria-label={t('Seek backward')}
                   role="button"
@@ -455,7 +455,7 @@ const PlayerBar = () => {
                     }
                   }}
                 />
-              </CustomTooltip>
+              </CustomTooltip> */}
               {/* Play/Pause Button */}
               <CustomTooltip text={t('Play/Pause')}>
                 <PlayerControlIcon
@@ -476,7 +476,7 @@ const PlayerBar = () => {
               </CustomTooltip>
 
               {/* Seek Forward Button */}
-              <CustomTooltip text={t('Seek forward')}>
+              {/* <CustomTooltip text={t('Seek forward')}>
                 <PlayerControlIcon
                   aria-label={t('Seek forward')}
                   role="button"
@@ -492,7 +492,7 @@ const PlayerBar = () => {
                     }
                   }}
                 />
-              </CustomTooltip>
+              </CustomTooltip> */}
               {/* Next Song Button */}
               <CustomTooltip text={t('Next Track')}>
                 <PlayerControlIcon
