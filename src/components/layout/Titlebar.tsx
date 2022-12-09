@@ -1,4 +1,6 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useEffect, useState } from 'react';
+import { remote } from 'electron';
 import { useTranslation } from 'react-i18next';
 import {
   TitleHeader,
@@ -11,6 +13,15 @@ import {
 import { useAppSelector } from '../../redux/hooks';
 import { getCurrentEntryList } from '../../shared/utils';
 import logo from '../../../assets/icon.png';
+
+function maximiseMinimise() {
+  const window = remote.getCurrentWindow();
+  if (!window.isMaximized()) {
+    window.maximize();
+  } else {
+    window.unmaximize();
+  }
+}
 
 const Titlebar = ({ font }: any) => {
   const { t } = useTranslation();
@@ -48,7 +59,7 @@ const Titlebar = ({ font }: any) => {
       <DragRegion id="drag-region">
         {misc.titleBar === 'mac' && (
           <>
-            <div id="window-title-wrapper-mac">
+            <div id="window-title-wrapper-mac" onDoubleClick={maximiseMinimise}>
               <span id="window-title-mac">{title}</span>
             </div>
 
@@ -114,7 +125,7 @@ const Titlebar = ({ font }: any) => {
 
         {misc.titleBar !== 'mac' && (
           <>
-            <div id="window-title-wrapper">
+            <div id="window-title-wrapper" onDoubleClick={maximiseMinimise}>
               <span id="window-title">
                 <img src={logo} height="20px" width="20px" alt="" style={{ marginRight: '5px' }} />
                 {title}
